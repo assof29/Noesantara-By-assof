@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -147,7 +147,7 @@
             align-items: start;
         }
 
-        /* KOLOM KIRI (Visual Media & Pemilih Menu) */
+        /* KOLOM KIRI (Visual Media & Pemilih Menu Cabor) */
         .media-sticky-box {
             position: sticky;
             top: 130px;
@@ -170,7 +170,7 @@
             object-fit: cover;
         }
 
-        /* Alat bantu gulir menu hidangan */
+        /* Alat bantu gulir menu cabor */
         .recipe-navigator-list {
             background: var(--noesantara-surface);
             border: 1px solid var(--noesantara-border);
@@ -210,7 +210,7 @@
             color: var(--noesantara-accent);
         }
 
-        /* KOLOM KANAN (Detail Informasi Resep) */
+        /* KOLOM KANAN (Detail Informasi Sejarah Cabor) */
         .recipe-sheet {
             display: none;
             background: var(--noesantara-surface);
@@ -243,12 +243,6 @@
             line-height: 1.25;
             margin-bottom: 6px;
             font-weight: 700;
-        }
-
-        .author-date {
-            font-size: 13px;
-            color: var(--noesantara-muted);
-            margin-bottom: 24px;
         }
 
         .meta-grid {
@@ -346,7 +340,7 @@
                 </div>
                 
                 <div class="search-box">
-                    <input type="text" id="recipeSearch" placeholder="Cari pusaka hidangan...">
+                    <input type="text" id="recipeSearch" placeholder="Cari cabang olahraga...">
                     <button onclick="executeSearch()">Cari</button>
                 </div>
             </div>
@@ -355,8 +349,8 @@
     </header>
 
     <div class="category-navigation">
-        <button id="cat-simple" class="nav-pill active" onclick="switchCategory('simple')">Resep Simple</button>
-        <button id="cat-nyantai" class="nav-pill" onclick="switchCategory('nyantai')">Resep Nyantai</button>
+        <button id="cat-simple" class="nav-pill active" onclick="switchCategory('simple')">Cabor Populer</button>
+        <button id="cat-nyantai" class="nav-pill" onclick="switchCategory('nyantai')">Cabor Tradisional</button>
     </div>
 
     <main class="content-grid">
@@ -364,11 +358,11 @@
         <section class="media-column" id="mediaSection">
             <div class="media-sticky-box">
                 <div class="frame-visual">
-                    <img id="mainImageDisplay" src="https://images.unsplash.com/photo-1603133872878-68550a5e7b64?auto=format&fit=crop&w=800&q=80" alt="Resep">
+                    <img id="mainImageDisplay" src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Cabor">
                 </div>
 
                 <div class="recipe-navigator-list">
-                    <h4>Pilih Menu Hidangan</h4>
+                    <h4>Pilih Cabang Olahraga</h4>
                     <div class="recipe-scroller-box" id="recipeSubLinks">
                         </div>
                 </div>
@@ -378,121 +372,121 @@
         <section class="recipe-column" id="recipeContainer">
             
             <div id="searchEmpty" class="alert-box">
-                <h3>Resep Tidak Ditemukan</h3>
-                <p>Silakan gunakan kata kunci memasak lainnya.</p>
+                <h3>Cabang Olahraga Tidak Ditemukan</h3>
+                <p>Silakan gunakan kata kunci olahraga lainnya.</p>
             </div>
 
-            <article id="resep-s1" class="recipe-sheet" data-cat="simple" data-keyword="nasi goreng" data-img="https://images.unsplash.com/photo-1603133872878-68550a5e7b64?auto=format&fit=crop&w=800&q=80">
-                <span class="badge-type">Resep Simple • Menu </span>
-                <h1>Nasi Goreng </h1>
+            <article id="resep-s1" class="recipe-sheet" data-cat="simple" data-keyword="sepak bola" data-img="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80">
+                <span class="badge-type">Cabor Populer • Menu 1</span>
+                <h1>Sepak Bola</h1>
                 <div class="meta-grid">
-                    <div class="meta-block"><p class="meta-title">Waktu</p><p class="meta-desc">15 Menit</p></div>
-                    
-                     
+                    <div class="meta-block"><p class="meta-title">Asal Negara</p><p class="meta-desc">Inggris</p></div>
+                    <div class="meta-block"><p class="meta-title">Jumlah Pemain</p><p class="meta-desc">11 Orang</p></div>
+                    <div class="meta-block"><p class="meta-title">Tingkat Fisik</p><p class="meta-desc">Tinggi</p></div>
                 </div>
-                <div class="section-block"><h2>Bahan</h2><ul class="item-list"><li>2 piring nasi putih(sesuai selera)</li><li>3 siung bawang merah</li><li>1 butir telur </li> <li> kecap manis</li> <li> cabai(opsional)</li> </ul></div>
-                <div class="section-block"><h2>Langkah</h2><ol class="instruction-sequence"><li><div class="step-index">01</div><div class="step-body">Tumis bawang hingga wangi.</div></li><li><div class="step-index">02</div><div class="step-body">Masukkan telur dan orak-arik, disusul nasi putih dan kecap manis.</div></li></ol></div>
+                <div class="recipe-description">
+                    "Sepak bola adalah cabang olahraga paling populer di dunia yang mempertemukan dua tim untuk memasukkan bola ke gawang lawan menggunakan kaki."
+                </div>
+                <div class="section-block">
+                    <h2>Fakta Sejarah</h2>
+                    <ul class="item-list">
+                        <li>Permainan menendang bola sudah ada sejak dinasti Han di Tiongkok kuno (Tsu Chu).</li>
+                        <li>Aturan sepak bola modern pertama kali dirumuskan di Inggris pada tahun 1863.</li>
+                        <li>Asosiasi tertinggi sepak bola dunia (FIFA) resmi didirikan pada tahun 1904.</li>
+                    </ul>
+                </div>
+                <div class="section-block">
+                    <h2>Komponen Permainan Utama</h2>
+                    <ol class="instruction-sequence">
+                        <li><div class="step-index">01</div><div class="step-body">Bola standar berukuran 5 berlapis bahan sintetis/kulit.</div></li>
+                        <li><div class="step-index">02</div><div class="step-body">Gawang berukuran lebar 7,32 meter dan tinggi 2,44 meter.</div></li>
+                    </ol>
+                </div>
             </article>
 
-            <article id="resep-s2" class="recipe-sheet" data-cat="simple" data-keyword="telur dadar gulung" data-img="https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=800&q=80">
-                <span class="badge-type">Resep Simple • Menu 2</span>
-                <h1>Telur Dadar Gulung Kriuk</h1>
-                <div class="meta-grid"><div class="meta-block"><p class="meta-title">Waktu</p><p class="meta-desc">10 Menit</p></div><div class="meta-block"><p class="meta-title">Porsi</p><p class="meta-desc">1 Orang</p></div><div class="meta-block"><p class="meta-title">Level</p><p class="meta-desc">Mudah</p></div></div>
-                <div class="section-block"><h2>Bahan</h2><ul class="item-list"><li>2 butir telur ayam</li><li>Irisan daun bawang</li><li>Garam secukupnya</li></ul></div>
-                <div class="section-block"><h2>Langkah</h2><ol class="instruction-sequence"><li><div class="step-index">01</div><div class="step-body">Kocok telur bersama garam dan daun bawang. Goreng tipis lalu gulung perlahan.</div></li></ol></div>
+            <article id="resep-s2" class="recipe-sheet" data-cat="simple" data-keyword="bola basket" data-img="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80">
+                <span class="badge-type">Cabor Populer • Menu 2</span>
+                <h1>Bola Basket</h1>
+                <div class="meta-grid">
+                    <div class="meta-block"><p class="meta-title">Asal Negara</p><p class="meta-desc">Amerika Serikat</p></div>
+                    <div class="meta-block"><p class="meta-title">Jumlah Pemain</p><p class="meta-desc">5 Orang</p></div>
+                    <div class="meta-block"><p class="meta-title">Tingkat Fisik</p><p class="meta-desc">Tinggi</p></div>
+                </div>
+                <div class="recipe-description">
+                    "Olahraga beregu yang mengandalkan koordinasi tangan dan kelincahan untuk memasukkan bola ke dalam keranjang lawan."
+                </div>
+                <div class="section-block">
+                    <h2>Fakta Sejarah</h2>
+                    <ul class="item-list">
+                        <li>Diciptakan oleh Dr. James Naismith pada Desember 1891 di Springfield, Massachusetts.</li>
+                        <li>Awalnya dimainkan menggunakan keranjang buah persik asli sebagai ring sasaran.</li>
+                        <li>Liga bola basket profesional paling bergengsi di dunia (NBA) didirikan pada tahun 1946.</li>
+                    </ul>
+                </div>
+                <div class="section-block">
+                    <h2>Komponen Permainan Utama</h2>
+                    <ol class="instruction-sequence">
+                        <li><div class="step-index">01</div><div class="step-body">Papan pantul dan ring basket setinggi 3,05 meter dari lantai.</div></li>
+                        <li><div class="step-index">02</div><div class="step-body">Bola basket karet bertekstur kasar untuk memudahkan genggaman tangan pemain.</div></li>
+                    </ol>
+                </div>
             </article>
 
-            <article id="resep-s3" class="recipe-sheet" data-cat="simple" data-keyword="cah kangkung terasi" data-img="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80">
-                <span class="badge-type">Resep Simple • Menu 3</span>
-                <h1>Cah Kangkung Terasi</h1>
-                <div class="meta-grid"><div class="meta-block"><p class="meta-title">Waktu</p><p class="meta-desc">10 Menit</p></div><div class="meta-block"><p class="meta-title">Porsi</p><p class="meta-desc">2 Orang</p></div><div class="meta-block"><p class="meta-title">Level</p><p class="meta-desc">Mudah</p></div></div>
-                <div class="section-block"><h2>Bahan</h2><ul class="item-list"><li>1 ikat kangkung segar</li><li>1 sdt terasi matang</li><li>2 siung bawang putih</li></ul></div>
-                <div class="section-block"><h2>Langkah</h2><ol class="instruction-sequence"><li><div class="step-index">01</div><div class="step-body">Tumis bawang putih dan terasi, masukkan kangkung lalu aduk cepat dengan api besar.</div></li></ol></div>
+            <article id="resep-n1" class="recipe-sheet" data-cat="nyantai" data-keyword="pencak silat" data-img="https://images.unsplash.com/photo-15555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80">
+                <span class="badge-type">Cabor Tradisional • Menu 1</span>
+                <h1>Pencak Silat</h1>
+                <div class="meta-grid">
+                    <div class="meta-block"><p class="meta-title">Asal Negara</p><p class="meta-desc">Indonesia</p></div>
+                    <div class="meta-block"><p class="meta-title">Jumlah Pemain</p><p class="meta-desc">1 Lawan 1</p></div>
+                    <div class="meta-block"><p class="meta-title">Tingkat Fisik</p><p class="meta-desc">Sangat Tinggi</p></div>
+                </div>
+                <div class="recipe-description">
+                    "Seni bela diri asli Nusantara yang memadukan unsur pertahanan diri, keindahan gerak seni, dan nilai spiritualitas."
+                </div>
+                <div class="section-block">
+                    <h2>Fakta Sejarah</h2>
+                    <ul class="item-list">
+                        <li>Berkembang sejak zaman kerajaan di Nusantara sebagai metode pertahanan diri militer tradisional.</li>
+                        <li>Ikatan Pencak Silat Indonesia (IPSI) resmi didirikan pada 18 Mei 1948 di Surakarta.</li>
+                        <li>Diakui secara resmi oleh UNESCO sebagai Warisan Budaya Takbenda Dunia pada tahun 2019.</li>
+                    </ul>
+                </div>
+                <div class="section-block">
+                    <h2>Komponen Utama</h2>
+                    <ol class="instruction-sequence">
+                        <li><div class="step-index">01</div><div class="step-body">Kuda-kuda kokoh sebagai fondasi utama penopang seluruh gerakan pertahanan dan serangan.</div></li>
+                        <li><div class="step-index">02</div><div class="step-body">Seni gerak jurus yang meniru gerakan bertahan hidup fauna khas hutan Nusantara.</div></li>
+                    </ol>
+                </div>
             </article>
 
-            <script>
-                const simpleTitles = [
-                    "Tumis Tahu Toge Gurih", "Roti Bakar Cokelat Keju", "Sayur Sop Bening", 
-                    "Sambal Tempe Goang", "Omelet Mie Instan", "Pisang Goreng Pasir", 
-                    "Sup Telur Tomat Sehat", "Tumis Sawi Putih Bakso", "Perkedel Kentang Mini", 
-                    "Ayam Goreng Mentega Simple", "Udang Goreng Bawang", "Buncis Siram Daging Cincang", 
-                    "Sambal Bawang Matang", "Jamur Crispy Camilan", "Jagung Bakar Manis", 
-                    "Bihun Goreng Kilat", "Sosis Asam Manis Praktis"
-                ];
-                const simpleImgs = [
-                    "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80"
-                ];
-                for(let i = 4; i <= 20; i++) {
-                    const title = simpleTitles[(i-4) % simpleTitles.length];
-                    const img = simpleImgs[(i-4) % simpleImgs.length];
-                    document.write(`
-                    <article id="resep-s${i}" class="recipe-sheet" data-cat="simple" data-keyword="${title.toLowerCase()}" data-img="${img}">
-                        <span class="badge-type">Resep Simple • Menu ${i}</span>
-                        <h1>${title}</h1>
-                        <div class="meta-grid"><div class="meta-block"><p class="meta-title">Waktu</p><p class="meta-desc">15 Menit</p></div><div class="meta-block"><p class="meta-title">Porsi</p><p class="meta-desc">2 Porsi</p></div><div class="meta-block"><p class="meta-title">Level</p><p class="meta-desc">Pemula</p></div></div>
-                        <div class="section-block"><h2>Bahan Utama</h2><ul class="item-list"><li>Bahan utama pilihan segar</li><li>Bumbu dapur pelengkap</li></ul></div>
-                        <div class="section-block"><h2>Langkah Pembuatan</h2><ol class="instruction-sequence"><li><div class="step-index">01</div><div class="step-body">Siapkan seluruh bahan baku di atas wadah higienis.</div></li><li><div class="step-index">02</div><div class="step-body">Masak bumbu dasar hingga layu lalu campurkan hidangan utama sampai matang rata.</div></li></ol></div>
-                    </article>
-                    `);
-                }
-            </script>
-
-            <article id="resep-n1" class="recipe-sheet" data-cat="nyantai" data-keyword="rendang daging sapi" data-img="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80">
-                <span class="badge-type">Resep Nyantai • Menu 1</span>
-                <h1>Rendang Daging Sapi Minang</h1>
-                <div class="meta-grid"><div class="meta-block"><p class="meta-title">Waktu</p><p class="meta-desc">4 Jam</p></div><div class="meta-block"><p class="meta-title">Porsi</p><p class="meta-desc">6 Orang</p></div><div class="meta-block"><p class="meta-title">Level</p><p class="meta-desc">Mahir</p></div></div>
-                <div class="section-block"><h2>Bahan</h2><ul class="item-list"><li>1 kg daging sapi padat</li><li>1 liter santan kental asli</li><li>Racikan rempah rendang lengkap</li></ul></div>
-                <div class="section-block"><h2>Langkah</h2><ol class="instruction-sequence"><li><div class="step-index">01</div><div class="step-body">Rebus daging bersama santan dan bumbu halus di atas kompor api kecil sembari sesekali diaduk santai.</div></li><li><div class="step-index">02</div><div class="step-body">Masak terus hingga kandungan air menyusut habis dan bumbu berubah menjadi cokelat gelap berkaramel.</div></li></ol></div>
+            <article id="resep-n2" class="recipe-sheet" data-cat="nyantai" data-keyword="tarik tambang" data-img="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80">
+                <span class="badge-type">Cabor Tradisional • Menu 2</span>
+                <h1>Tarik Tambang</h1>
+                <div class="meta-grid">
+                    <div class="meta-block"><p class="meta-title">Asal Negara</p><p class="meta-desc">Global / Kuno</p></div>
+                    <div class="meta-block"><p class="meta-title">Jumlah Pemain</p><p class="meta-desc">5-8 Orang</p></div>
+                    <div class="meta-block"><p class="meta-title">Tingkat Fisik</p><p class="meta-desc">Sedang</p></div>
+                </div>
+                <div class="recipe-description">
+                    "Olahraga adu kekuatan kelompok yang mengandalkan tarikan tali tambang serat kasar untuk melewati batas garis tertentu."
+                </div>
+                <div class="section-block">
+                    <h2>Fakta Sejarah</h2>
+                    <ul class="item-list">
+                        <li>Tercatat dimainkan sebagai bagian dari upacara militer di Mesir kuno, Yunani, dan Tiongkok.</li>
+                        <li>Sempat menjadi cabang olahraga resmi yang dipertandingkan dalam Olimpiade Modern pada tahun 1900 hingga 1920.</li>
+                        <li>Di Indonesia, olahraga ini menjadi bagian dari permainan rakyat yang populer menjelang perayaan hari kemerdekaan.</li>
+                    </ul>
+                </div>
+                <div class="section-block">
+                    <h2>Komponen Utama</h2>
+                    <ol class="instruction-sequence">
+                        <li><div class="step-index">01</div><div class="step-body">Tali tambang serat manila kuat berdiameter 32mm hingga 40mm.</div></li>
+                        <li><div class="step-index">02</div><div class="step-body">Garis pembatas tengah berwarna merah atau kuning sebagai penentu akhir kemenangan tim.</div></li>
+                    </ol>
+                </div>
             </article>
-
-            <article id="resep-n2" class="recipe-sheet" data-cat="nyantai" data-keyword="sate ayam madura" data-img="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80">
-                <span class="badge-type">Resep Nyantai • Menu 2</span>
-                <h1>Sate Ayam Madura Asli</h1>
-                <div class="meta-grid"><div class="meta-block"><p class="meta-title">Waktu</p><p class="meta-desc">60 Menit</p></div><div class="meta-block"><p class="meta-title">Porsi</p><p class="meta-desc">3 Orang</p></div><div class="meta-block"><p class="meta-title">Level</p><p class="meta-desc">Menengah</p></div></div>
-                <div class="section-block"><h2>Bahan</h2><ul class="item-list"><li>500g fillet dada ayam</li><li>200g kacang tanah goreng (haluskan)</li><li>Kecap manis & tusuk sate</li></ul></div>
-                <div class="section-block"><h2>Langkah</h2><ol class="instruction-sequence"><li><div class="step-index">01</div><div class="step-body">Potong dadu ayam lalu tusuk. Lumuri dengan sedikit bumbu kacang dan kecap.</div></li><li><div class="step-index">02</div><div class="step-body">Bakar sate di atas bara api arang secara perlahan hingga matang merata, sajikan dengan siraman saus kacang.</div></li></ol></div>
-            </article>
-
-            <article id="resep-n3" class="recipe-sheet" data-cat="nyantai" data-keyword="soto ayam lamongan" data-img="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80">
-                <span class="badge-type">Resep Nyantai • Menu 3</span>
-                <h1>Soto Ayam Lamongan Koya</h1>
-                <div class="meta-grid"><div class="meta-block"><p class="meta-title">Waktu</p><p class="meta-desc">90 Menit</p></div><div class="meta-block"><p class="meta-title">Porsi</p><p class="meta-desc">4 Orang</p></div><div class="meta-block"><p class="meta-title">Level</p><p class="meta-desc">Mahir</p></div></div>
-                <div class="section-block"><h2>Bahan</h2><ul class="item-list"><li>1 ekor ayam kampung</li><li>Bumbu soto kuning lengkap</li><li>Bubuk koya kerupuk udang</li></ul></div>
-                <div class="section-block"><h2>Langkah</h2><ol class="instruction-sequence"><li><div class="step-index">01</div><div class="step-body">Rebus ayam untuk menghasilkan kuah kaldu gurih. Tumis bumbu halus kuning lalu masukkan ke kuah.</div></li><li><div class="step-index">02</div><div class="step-body">Suwir ayam goreng pelengkap, sajikan di mangkuk beserta siraman kuah panas dan taburan bubuk koya gurih.</div></li></ol></div>
-            </article>
-
-            <script>
-                const nyantaiTitles = [
-                    "Gulai Kepala Ikan Kakap", "Opor Ayam Kampung Lebaran", "Semur Daging Sapi Kentang",
-                    "Rawon Daging Keluak Khas Jatim", "Gulai Kambing Rempah", "Bakso Sapi Urat Malang",
-                    "Ayam Betutu Khas Bali", "Pepes Ikan Mas Presto", "Sop Buntut Sapi Premium",
-                    "Ketoprak Spesial Jakarta", "Gado-Gado Siram Bumbu", "Siomay Bandung Asli",
-                    "Pempek Palembang Kapal Selam", "Lontong Sayur Komplit", "Mie Aceh Kepiting",
-                    "Tongseng Sapi Pedas Gurih", "Bubur Manado Tinutuan"
-                ];
-                const nyantaiImgs = [
-                    "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"
-                ];
-                for(let i = 4; i <= 20; i++) {
-                    const title = nyantaiTitles[(i-4) % nyantaiTitles.length];
-                    const img = nyantaiImgs[(i-4) % nyantaiImgs.length];
-                    document.write(`
-                    <article id="resep-n${i}" class="recipe-sheet" data-cat="nyantai" data-keyword="${title.toLowerCase()}" data-img="${img}">
-                        <span class="badge-type">Resep Nyantai • Menu ${i}</span>
-                        <h1>${title}</h1>
-                        <div class="meta-grid"><div class="meta-block"><p class="meta-title">Waktu</p><p class="meta-desc">60-120 Menit</p></div><div class="meta-block"><p class="meta-title">Porsi</p><p class="meta-desc">4 Porsi</p></div><div class="meta-block"><p class="meta-title">Level</p><p class="meta-desc">Menengah</p></div></div>
-                        <div class="section-block"><h2>Bahan Baku Tradisional</h2><ul class="item-list"><li>Komoditas daging / sayur utama pilihan</li><li>Rempah aromatik nusantara lengkap</li></ul></div>
-                        <div class="section-block"><h2>Proses Pembuatan Slow-Cooking</h2><ol class="instruction-sequence"><li><div class="step-index">01</div><div class="step-body">Ungkep hidangan utama bersama racikan bumbu di atas api kecil agar meresap ke serat terdalam.</div></li><li><div class="step-index">02</div><div class="step-body">Aduk secara berkala hingga kuah mengental kental dan matang matang sempurna secara alami.</div></li></ol></div>
-                    </article>
-                    `);
-                }
-            </script>
 
         </section>
     </main>
