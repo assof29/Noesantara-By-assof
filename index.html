@@ -1,12 +1,12 @@
-  <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noesantara Sport - Tugas Mini Project PKL 2026</title>
+    <title>Noesantara - Hobi & Gairah 2026</title>
     <style>
-        /* --- DESAIN PREMIUM NOESANTARA --- */
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+        /* --- TEMA DARK SPORTY & ANIMASI --- */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Oswald:wght@500;700&display=swap');
 
         * {
             margin: 0;
@@ -15,30 +15,60 @@
         }
 
         :root {
-            --noesantara-accent: #FA4A0C;    
-            --noesantara-dark: #1E2329;      
-            --noesantara-muted: #4F5E71;     
-            --noesantara-bg: #F9FAFB;        
-            --noesantara-border: #E5E7EB;    
-            --noesantara-surface: #FFFFFF;  
+            --sport-primary: #3B82F6;    /* Electric Blue */
+            --sport-neon: #00FFD1;       /* Neon Cyan */
+            --sport-dark: #0F172A;       /* Deep Slate */
+            --sport-card: #1E293B;       /* Lighter Slate */
+            --sport-bg: #020617;         /* Real Black */
+            --sport-border: #334155;     
+            --text-main: #F8FAFC;
         }
 
         body {
-            background-color: var(--noesantara-bg);
-            color: var(--noesantara-dark);
+            background-color: var(--sport-bg);
+            color: var(--text-main);
             font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            padding-bottom: 40px;
         }
 
-        /* Header / Navigation */
+        /* Keyframe Animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes imageIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulseBorder {
+            0% { border-color: var(--sport-primary); }
+            50% { border-color: var(--sport-neon); }
+            100% { border-color: var(--sport-primary); }
+        }
+
+        /* Banner PKL */
+        .pkl-banner {
+            background: linear-gradient(90deg, var(--sport-primary), var(--sport-neon));
+            color: var(--sport-bg);
+            text-align: center;
+            padding: 10px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Header Navigation */
         .main-header {
-            background-color: var(--noesantara-surface);
-            border-bottom: 1px solid var(--noesantara-border);
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--sport-border);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.015);
         }
 
         .header-wrap {
@@ -47,444 +77,381 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 24px;
-            gap: 16px;
+            padding: 15px 24px;
         }
 
         .brand-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;
             font-weight: 700;
-            color: var(--noesantara-dark);
+            color: white;
             text-decoration: none;
-            letter-spacing: -0.5px;
-            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
-        .brand-logo span {
-            color: var(--noesantara-accent);
+        .brand-logo span { color: var(--sport-primary); }
+
+        .by-tag {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--sport-neon);
+            border: 1px solid var(--sport-neon);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
         }
 
-        /* Search Bar Kanan Atas */
+        /* Search Bar Kanan */
         .search-box {
+            position: relative;
             display: flex;
             align-items: center;
-            position: relative;
-            flex: 0 1 320px;
         }
 
         .search-box input {
-            width: 100%;
-            padding: 10px 16px;
-            padding-right: 75px;
-            border: 1px solid var(--noesantara-border);
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
+            background: var(--sport-card);
+            border: 1px solid var(--sport-border);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            width: 250px;
+            transition: all 0.3s ease;
             outline: none;
-            background-color: #F3F4F6;
-            transition: all 0.25s ease;
         }
 
         .search-box input:focus {
-            background-color: var(--noesantara-surface);
-            border-color: var(--noesantara-accent);
-            box-shadow: 0 0 0 3px rgba(250, 74, 12, 0.08);
+            width: 300px;
+            border-color: var(--sport-primary);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
         }
 
         .search-box button {
-            position: absolute;
-            right: 4px;
-            background-color: var(--noesantara-accent);
+            background: var(--sport-primary);
             color: white;
             border: none;
-            padding: 7px 14px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 12px;
+            padding: 8px 15px;
+            margin-left: -50px;
+            border-radius: 6px;
             cursor: pointer;
-            transition: background 0.2s;
+            font-weight: 700;
         }
 
-        /* Kategori Menu Tab */
-        .category-navigation {
+        /* Tab Kategori */
+        .tab-section {
             max-width: 1200px;
-            margin: 24px auto 8px auto;
+            margin: 30px auto 10px;
             padding: 0 24px;
             display: flex;
-            gap: 12px;
+            gap: 15px;
         }
 
-        .nav-pill {
-            flex: 1;
-            background: var(--noesantara-surface);
-            border: 1px solid var(--noesantara-border);
-            padding: 12px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            color: var(--noesantara-muted);
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-
-        .nav-pill.active {
-            background-color: var(--noesantara-dark);
+        .tab-btn {
+            background: var(--sport-card);
+            border: 1px solid var(--sport-border);
             color: white;
-            border-color: var(--noesantara-dark);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            flex: 1;
         }
 
-        /* Layout Utama Terbalik (Kiri Media, Kanan Teks) */
-        .content-grid {
+        .tab-btn:hover { background: var(--sport-border); }
+
+        .tab-btn.active {
+            background: var(--sport-primary);
+            border-color: var(--sport-neon);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Grid Utama */
+        .main-grid {
             max-width: 1200px;
-            margin: 16px auto 0 auto;
+            margin: 20px auto;
             padding: 0 24px;
             display: grid;
-            grid-template-columns: 5fr 7fr; 
-            gap: 32px;
-            align-items: start;
+            grid-template-columns: 5fr 7fr;
+            gap: 40px;
         }
 
-        /* KOLOM KIRI (Visual Media & Pemilih Menu Cabor) */
-        .media-sticky-box {
+        /* Kolom Kiri - Visual */
+        .sticky-media {
             position: sticky;
-            top: 130px;
+            top: 120px;
         }
 
-        .frame-visual {
+        .image-frame {
             width: 100%;
-            height: 380px;
-            background-color: #EBF0F3;
+            height: 450px;
+            background: #000;
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid var(--noesantara-border);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.02);
-            margin-bottom: 16px;
+            border: 3px solid var(--sport-primary);
+            animation: pulseBorder 4s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .frame-visual img {
+        .image-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            animation: imageIn 0.8s ease-out;
         }
 
-        /* Alat bantu gulir menu cabor */
-        .recipe-navigator-list {
-            background: var(--noesantara-surface);
-            border: 1px solid var(--noesantara-border);
-            border-radius: 16px;
-            padding: 14px;
+        .hobby-list {
+            margin-top: 20px;
+            background: var(--sport-card);
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid var(--sport-border);
         }
 
-        .recipe-navigator-list h4 {
+        .hobby-list h4 {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--noesantara-muted);
-            margin-bottom: 8px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid var(--noesantara-border);
+            color: var(--sport-neon);
+            margin-bottom: 10px;
         }
 
-        .recipe-scroller-box {
-            max-height: 180px;
-            overflow-y: auto;
-        }
-
-        .sub-recipe-item {
-            padding: 8px 12px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px;
+        .sub-link {
             display: block;
-            color: var(--noesantara-dark);
-            transition: background 0.2s;
+            padding: 10px;
+            color: #94a3b8;
             text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
         }
 
-        .sub-recipe-item:hover, .sub-recipe-item.active {
-            background-color: #FFF0EB;
-            color: var(--noesantara-accent);
+        .sub-link.active, .sub-link:hover {
+            color: white;
+            background: var(--sport-primary);
         }
 
-        /* KOLOM KANAN (Detail Informasi Sejarah Cabor) */
-        .recipe-sheet {
+        /* Kolom Kanan - Detail */
+        .hobby-sheet {
             display: none;
-            background: var(--noesantara-surface);
-            border: 1px solid var(--noesantara-border);
-            border-radius: 20px;
-            padding: 32px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+            animation: fadeIn 0.6s ease-out;
         }
 
-        .recipe-sheet.active {
+        .hobby-sheet.active { display: block; }
+
+        .info-card {
+            background: var(--sport-card);
+            border: 1px solid var(--sport-border);
+            padding: 40px;
+            border-radius: 24px;
+            position: relative;
+        }
+
+        .info-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, var(--sport-primary), var(--sport-neon));
+            border-radius: 24px 24px 0 0;
+        }
+
+        .tag {
+            color: var(--sport-neon);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-bottom: 15px;
             display: block;
         }
 
-        .badge-type {
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1px;
+        .info-card h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 45px;
             text-transform: uppercase;
-            color: var(--noesantara-accent);
-            background: #FFF0EB;
-            padding: 6px 12px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-bottom: 14px;
+            margin-bottom: 20px;
+            line-height: 1.1;
         }
 
-        .recipe-sheet h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            line-height: 1.25;
-            margin-bottom: 6px;
-            font-weight: 700;
-        }
-
-        .meta-grid {
+        .spec-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid var(--noesantara-border);
-            border-bottom: 1px solid var(--noesantara-border);
-            padding: 14px 0;
-            margin-bottom: 28px;
-            gap: 8px;
+            gap: 15px;
+            margin-bottom: 30px;
+            background: var(--sport-bg);
+            padding: 20px;
+            border-radius: 15px;
         }
 
-        .meta-title { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--noesantara-muted); letter-spacing: 0.5px;}
-        .meta-desc { font-size: 14px; font-weight: 700; margin-top: 2px;}
-
-        .recipe-description {
-            font-size: 15px;
-            line-height: 1.6;
-            color: var(--noesantara-muted);
-            margin-bottom: 28px;
-            font-style: italic;
+        .spec-item p:first-child {
+            font-size: 10px;
+            color: #64748b;
+            text-transform: uppercase;
         }
 
-        .recipe-sheet h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 16px;}
-        .section-block { margin-bottom: 32px;}
-        .item-list { list-style: none;}
-        .item-list li { font-size: 15px; font-weight: 500; padding: 10px 0; border-bottom: 1px dashed var(--noesantara-border); display: flex; align-items: center;}
-        .item-list li::before { content: "—"; color: var(--noesantara-accent); margin-right: 12px; font-weight: 700;}
-
-        .instruction-sequence { list-style: none;}
-        .instruction-sequence li { display: flex; margin-bottom: 16px;}
-        .step-index { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--noesantara-accent); width: 30px; flex-shrink: 0;}
-        .step-body { font-size: 15px; line-height: 1.55; color: #2D3748;}
-
-        .alert-box {
-            background: var(--noesantara-surface);
-            border: 1px solid var(--noesantara-border);
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-            color: var(--noesantara-muted);
-            display: none;
+        .spec-item p:last-child {
+            font-weight: 700;
+            font-size: 16px;
         }
 
-        /* --- OPTIMASI RESPONSIVITAS MOBILE PHONE --- */
-        @media (max-width: 820px) {
-            .header-wrap {
-                padding: 12px 16px;
-            }
-            .category-navigation {
-                margin: 16px auto 4px auto;
-                padding: 0 16px;
-                gap: 8px;
-            }
-            .nav-pill {
-                padding: 10px;
-                font-size: 13px;
-            }
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 0 16px;
-            }
-            .media-sticky-box {
-                position: static;
-            }
-            .frame-visual {
-                height: 240px;
-                border-radius: 16px;
-                margin-bottom: 12px;
-            }
-            .recipe-sheet {
-                padding: 24px 20px;
-                border-radius: 16px;
-            }
-            .recipe-sheet h1 {
-                font-size: 24px;
-            }
+        .description {
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .section-h {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--sport-border);
+            padding-bottom: 5px;
+        }
+
+        .point-list { list-style: none; }
+        .point-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--sport-border);
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .point-list li::before {
+            content: "⚡";
+            margin-right: 15px;
+            color: var(--sport-neon);
+        }
+
+        /* Mobile Phone Optimization */
+        @media (max-width: 850px) {
+            .header-wrap { flex-direction: column; gap: 15px; }
+            .search-box input { width: 100%; }
+            .main-grid { grid-template-columns: 1fr; padding: 15px; }
+            .sticky-media { position: static; }
+            .image-frame { height: 280px; }
+            .info-card { padding: 25px; }
+            .info-card h1 { font-size: 32px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="main-header" style="padding: 12px 0;">
-        <div class="header-wrap" style="flex-direction: column; align-items: flex-start; gap: 8px; max-width: 1200px; margin: 0 auto; padding: 0 24px;">
-            
-            <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--noesantara-muted); display: block; margin-bottom: -4px;">
-                TUGAS MINI PROJECT PKL 2026
-            </span>
+    <div class="pkl-banner">Tugas Mini Project PKL 2026</div>
 
-            <div style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <a href="#" class="brand-logo" style="line-height: 1; font-size: 28px;">Noesantara<span>Sport</span></a>
-                    <span style="font-size: 10px; font-weight: 700; color: var(--noesantara-accent); background: #FFF0EB; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; text-transform: uppercase; border: 1px solid rgba(250, 74, 12, 0.15);">By assof</span>
-                </div>
-                
-                <div class="search-box">
-                    <input type="text" id="recipeSearch" placeholder="Cari cabang olahraga...">
-                    <button onclick="executeSearch()">Cari</button>
-                </div>
+    <header class="main-header">
+        <div class="header-wrap">
+            <div style="display: flex; align-items: center;">
+                <a href="#" class="brand-logo">Noe<span>santara</span></a>
+                <span class="by-tag">By assof</span>
             </div>
-
+            <div class="search-box">
+                <input type="text" id="searchBar" placeholder="Cari Hobi Anda...">
+                <button onclick="performSearch()">GO</button>
+            </div>
         </div>
     </header>
 
-    <div class="category-navigation">
-        <button id="cat-simple" class="nav-pill active" onclick="switchCategory('simple')">Cabor Populer</button>
-        <button id="cat-nyantai" class="nav-pill" onclick="switchCategory('nyantai')">Cabor Tradisional</button>
+    <div class="tab-section">
+        <button id="tab-aktif" class="tab-btn active" onclick="switchTab('aktif')">Hobi Aktif</button>
+        <button id="tab-santai" class="tab-btn" onclick="switchTab('santai')">Hobi Santai</button>
     </div>
 
-    <main class="content-grid">
-        
-        <section class="media-column" id="mediaSection">
-            <div class="media-sticky-box">
-                <div class="frame-visual">
-                    <img id="mainImageDisplay" src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Cabor">
+    <main class="main-grid">
+        <section class="media-col">
+            <div class="sticky-media">
+                <div class="image-frame">
+                    <img id="mainImage" src="" alt="Hobby Image">
                 </div>
-
-                <div class="recipe-navigator-list">
-                    <h4>Pilih Cabang Olahraga</h4>
-                    <div class="recipe-scroller-box" id="recipeSubLinks">
-                        </div>
+                <div class="hobby-list">
+                    <h4>Highlight Menu</h4>
+                    <div id="subLinkContainer"></div>
                 </div>
             </div>
         </section>
 
-        <section class="recipe-column" id="recipeContainer">
+        <section class="content-col" id="hobbyContainer">
             
-            <div id="searchEmpty" class="alert-box">
-                <h3>Cabang Olahraga Tidak Ditemukan</h3>
-                <p>Silakan gunakan kata kunci olahraga lainnya.</p>
+            <div id="noResult" style="display:none; text-align:center; padding:50px;">
+                <h2>Hobi Tidak Ditemukan!</h2>
+                <p>Gunakan kata kunci seperti 'Basket', 'Sepeda', 'Foto', atau 'Gaming'.</p>
             </div>
 
-            <article id="resep-s1" class="recipe-sheet" data-cat="simple" data-keyword="sepak bola" data-img="https://asset.kompas.com/crops/nyu0cVPaqFMWHhBc6rG8_3WiJYs=/5x3:4000x2667/1200x800/data/photo/2022/07/06/62c59e4e144a4.jpg">
-                <span class="badge-type">Cabor Populer • Menu 1</span>
-                <h1>Sepak Bola</h1>
-                <div class="meta-grid">
-                    <div class="meta-block"><p class="meta-title">Asal Negara</p><p class="meta-desc">Inggris</p></div>
-                    <div class="meta-block"><p class="meta-title">Jumlah Pemain</p><p class="meta-desc">11 Orang</p></div>
-                    <div class="meta-block"><p class="meta-title">Tingkat Fisik</p><p class="meta-desc">Tinggi</p></div>
-                </div>
-                <div class="recipe-description">
-                    "Sepak bola adalah cabang olahraga paling populer di dunia yang mempertemukan dua tim untuk memasukkan bola ke gawang lawan menggunakan kaki."
-                </div>
-                <div class="section-block">
-                    <h2>Fakta Sejarah</h2>
-                    <ul class="item-list">
-                        <li>Permainan menendang bola sudah ada sejak dinasti Han di Tiongkok kuno (Tsu Chu).</li>
-                        <li>Aturan sepak bola modern pertama kali dirumuskan di Inggris pada tahun 1863.</li>
-                        <li>Asosiasi tertinggi sepak bola dunia (FIFA) resmi didirikan pada tahun 1904.</li>
+            <article id="h-basket" class="hobby-sheet" data-cat="aktif" data-key="basket basketball" data-img="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80">
+                <div class="info-card">
+                    <span class="tag">High Energy • 01</span>
+                    <h1>Street Basketball</h1>
+                    <div class="spec-grid">
+                        <div class="spec-item"><p>Intensitas</p><p>Extreme</p></div>
+                        <div class="spec-item"><p>Pemain</p><p>1 - 10 Orang</p></div>
+                        <div class="spec-item"><p>Tipe</p><p>Outdoor/Indoor</p></div>
+                    </div>
+                    <p class="description">Bola basket jalanan adalah ekspresi kebebasan fisik. Bukan hanya soal poin, tapi soal gaya, kecepatan, dan ketahanan mental di lapangan keras.</p>
+                    <h2 class="section-h">Peralatan Wajib</h2>
+                    <ul class="point-list">
+                        <li>Bola Basket Ukuran 7 (Standar)</li>
+                        <li>Sepatu High-Top untuk proteksi ankle</li>
+                        <li>Wristband & Jersey Breathable</li>
                     </ul>
-                </div>
-                <div class="section-block">
-                    <h2>Komponen Permainan Utama</h2>
-                    <ol class="instruction-sequence">
-                        <li><div class="step-index">01</div><div class="step-body">Bola standar berukuran 5 berlapis bahan sintetis/kulit.</div></li>
-                        <li><div class="step-index">02</div><div class="step-body">Gawang berukuran lebar 7,32 meter dan tinggi 2,44 meter.</div></li>
-                    </ol>
                 </div>
             </article>
 
-            <article id="resep-s2" class="recipe-sheet" data-cat="simple" data-keyword="bola basket" data-img="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80">
-                <span class="badge-type">Cabor Populer • Menu 2</span>
-                <h1>Bola Basket</h1>
-                <div class="meta-grid">
-                    <div class="meta-block"><p class="meta-title">Asal Negara</p><p class="meta-desc">Amerika Serikat</p></div>
-                    <div class="meta-block"><p class="meta-title">Jumlah Pemain</p><p class="meta-desc">5 Orang</p></div>
-                    <div class="meta-block"><p class="meta-title">Tingkat Fisik</p><p class="meta-desc">Tinggi</p></div>
-                </div>
-                <div class="recipe-description">
-                    "Olahraga beregu yang mengandalkan koordinasi tangan dan kelincahan untuk memasukkan bola ke dalam keranjang lawan."
-                </div>
-                <div class="section-block">
-                    <h2>Fakta Sejarah</h2>
-                    <ul class="item-list">
-                        <li>Diciptakan oleh Dr. James Naismith pada Desember 1891 di Springfield, Massachusetts.</li>
-                        <li>Awalnya dimainkan menggunakan keranjang buah persik asli sebagai ring sasaran.</li>
-                        <li>Liga bola basket profesional paling bergengsi di dunia (NBA) didirikan pada tahun 1946.</li>
+            <article id="h-sepeda" class="hobby-sheet" data-cat="aktif" data-key="sepeda mountain bike gowes" data-img="https://images.unsplash.com/photo-1544191173-834f5d9d4f4e?auto=format&fit=crop&w=800&q=80">
+                <div class="info-card">
+                    <span class="tag">Adventure • 02</span>
+                    <h1>Mountain Biking</h1>
+                    <div class="spec-grid">
+                        <div class="spec-item"><p>Intensitas</p><p>Tinggi</p></div>
+                        <div class="spec-item"><p>Durasi</p><p>2 - 5 Jam</p></div>
+                        <div class="spec-item"><p>Medan</p><p>Tanah / Gunung</p></div>
+                    </div>
+                    <p class="description">Menaklukkan medan berat dengan sepeda gunung memberikan sensasi adrenalin yang tak tertandingi sambil menikmati alam liar secara langsung.</p>
+                    <h2 class="section-h">Peralatan Wajib</h2>
+                    <ul class="point-list">
+                        <li>MTB dengan suspensi mumpuni</li>
+                        <li>Helm Full-Face / Half-Shell</li>
+                        <li>Body Protector & Sarung Tangan</li>
                     </ul>
-                </div>
-                <div class="section-block">
-                    <h2>Komponen Permainan Utama</h2>
-                    <ol class="instruction-sequence">
-                        <li><div class="step-index">01</div><div class="step-body">Papan pantul dan ring basket setinggi 3,05 meter dari lantai.</div></li>
-                        <li><div class="step-index">02</div><div class="step-body">Bola basket karet bertekstur kasar untuk memudahkan genggaman tangan pemain.</div></li>
-                    </ol>
                 </div>
             </article>
 
-            <article id="resep-n1" class="recipe-sheet" data-cat="nyantai" data-keyword="pencak silat" data-img="https://images.unsplash.com/photo-15555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80">
-                <span class="badge-type">Cabor Tradisional • Menu 1</span>
-                <h1>Pencak Silat</h1>
-                <div class="meta-grid">
-                    <div class="meta-block"><p class="meta-title">Asal Negara</p><p class="meta-desc">Indonesia</p></div>
-                    <div class="meta-block"><p class="meta-title">Jumlah Pemain</p><p class="meta-desc">1 Lawan 1</p></div>
-                    <div class="meta-block"><p class="meta-title">Tingkat Fisik</p><p class="meta-desc">Sangat Tinggi</p></div>
-                </div>
-                <div class="recipe-description">
-                    "Seni bela diri asli Nusantara yang memadukan unsur pertahanan diri, keindahan gerak seni, dan nilai spiritualitas."
-                </div>
-                <div class="section-block">
-                    <h2>Fakta Sejarah</h2>
-                    <ul class="item-list">
-                        <li>Berkembang sejak zaman kerajaan di Nusantara sebagai metode pertahanan diri militer tradisional.</li>
-                        <li>Ikatan Pencak Silat Indonesia (IPSI) resmi didirikan pada 18 Mei 1948 di Surakarta.</li>
-                        <li>Diakui secara resmi oleh UNESCO sebagai Warisan Budaya Takbenda Dunia pada tahun 2019.</li>
+            <article id="h-foto" class="hobby-sheet" data-cat="santai" data-key="foto fotografi kamera" data-img="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80">
+                <div class="info-card">
+                    <span class="tag">Creative • 03</span>
+                    <h1>Photography</h1>
+                    <div class="spec-grid">
+                        <div class="spec-item"><p>Fokus</p><p>Visual Seni</p></div>
+                        <div class="spec-item"><p>Skill</p><p>Teknis & Estetika</p></div>
+                        <div class="spec-item"><p>Alat</p><p>Kamera Digital</p></div>
+                    </div>
+                    <p class="description">Mengabadikan momen dalam satu bingkai adalah hobi yang melatih kesabaran dan kepekaan visual terhadap detail di sekitar kita.</p>
+                    <h2 class="section-h">Peralatan Wajib</h2>
+                    <ul class="point-list">
+                        <li>Kamera DSLR / Mirrorless</li>
+                        <li>Lensa Prime (35mm / 50mm)</li>
+                        <li>Tripod & Memory Card High-Speed</li>
                     </ul>
-                </div>
-                <div class="section-block">
-                    <h2>Komponen Utama</h2>
-                    <ol class="instruction-sequence">
-                        <li><div class="step-index">01</div><div class="step-body">Kuda-kuda kokoh sebagai fondasi utama penopang seluruh gerakan pertahanan dan serangan.</div></li>
-                        <li><div class="step-index">02</div><div class="step-body">Seni gerak jurus yang meniru gerakan bertahan hidup fauna khas hutan Nusantara.</div></li>
-                    </ol>
                 </div>
             </article>
 
-            <article id="resep-n2" class="recipe-sheet" data-cat="nyantai" data-keyword="tarik tambang" data-img="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80">
-                <span class="badge-type">Cabor Tradisional • Menu 2</span>
-                <h1>Tarik Tambang</h1>
-                <div class="meta-grid">
-                    <div class="meta-block"><p class="meta-title">Asal Negara</p><p class="meta-desc">Global / Kuno</p></div>
-                    <div class="meta-block"><p class="meta-title">Jumlah Pemain</p><p class="meta-desc">5-8 Orang</p></div>
-                    <div class="meta-block"><p class="meta-title">Tingkat Fisik</p><p class="meta-desc">Sedang</p></div>
-                </div>
-                <div class="recipe-description">
-                    "Olahraga adu kekuatan kelompok yang mengandalkan tarikan tali tambang serat kasar untuk melewati batas garis tertentu."
-                </div>
-                <div class="section-block">
-                    <h2>Fakta Sejarah</h2>
-                    <ul class="item-list">
-                        <li>Tercatat dimainkan sebagai bagian dari upacara militer di Mesir kuno, Yunani, dan Tiongkok.</li>
-                        <li>Sempat menjadi cabang olahraga resmi yang dipertandingkan dalam Olimpiade Modern pada tahun 1900 hingga 1920.</li>
-                        <li>Di Indonesia, olahraga ini menjadi bagian dari permainan rakyat yang populer menjelang perayaan hari kemerdekaan.</li>
+            <article id="h-gaming" class="hobby-sheet" data-cat="santai" data-key="gaming game esport" data-img="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80">
+                <div class="info-card">
+                    <span class="tag">Electronic Sport • 04</span>
+                    <h1>E-Sports Gaming</h1>
+                    <div class="spec-grid">
+                        <div class="spec-item"><p>Intensitas</p><p>Fokus Tinggi</p></div>
+                        <div class="spec-item"><p>Platform</p><p>PC / Console</p></div>
+                        <div class="spec-item"><p>Mode</p><p>Multiplayer</p></div>
+                    </div>
+                    <p class="description">Gaming bukan lagi sekadar mengisi waktu, melainkan asah strategi, reaksi cepat, dan kerja sama tim dalam ekosistem digital yang kompetitif.</p>
+                    <h2 class="section-h">Peralatan Wajib</h2>
+                    <ul class="point-list">
+                        <li>High-End PC / Next-Gen Console</li>
+                        <li>Mechanical Keyboard & Gaming Mouse</li>
+                        <li>Headset dengan Surround Sound</li>
                     </ul>
-                </div>
-                <div class="section-block">
-                    <h2>Komponen Utama</h2>
-                    <ol class="instruction-sequence">
-                        <li><div class="step-index">01</div><div class="step-body">Tali tambang serat manila kuat berdiameter 32mm hingga 40mm.</div></li>
-                        <li><div class="step-index">02</div><div class="step-body">Garis pembatas tengah berwarna merah atau kuning sebagai penentu akhir kemenangan tim.</div></li>
-                    </ol>
                 </div>
             </article>
 
@@ -492,116 +459,107 @@
     </main>
 
     <script>
-        let currentCategory = 'simple';
+        let currentTab = 'aktif';
 
-        window.addEventListener('DOMContentLoaded', () => {
-            switchCategory('simple');
-        });
+        window.onload = () => switchTab('aktif');
 
-        function switchCategory(category) {
-            currentCategory = category;
+        function switchTab(cat) {
+            currentTab = cat;
+            document.getElementById('tab-aktif').classList.toggle('active', cat === 'aktif');
+            document.getElementById('tab-santai').classList.toggle('active', cat === 'santai');
             
-            document.getElementById('cat-simple').classList.remove('active');
-            document.getElementById('cat-nyantai').classList.remove('active');
-            document.getElementById('cat-' + category).classList.add('active');
-
-            document.getElementById('searchEmpty').style.display = 'none';
-            document.getElementById('mediaSection').style.display = 'block';
-
-            const sheets = document.querySelectorAll('.recipe-sheet');
-            let firstFoundCard = null;
-
-            sheets.forEach(sheet => {
-                if (sheet.getAttribute('data-cat') === category) {
-                    if (!firstFoundCard) firstFoundCard = sheet;
-                    sheet.classList.remove('active');
+            document.getElementById('noResult').style.display = 'none';
+            
+            const sheets = document.querySelectorAll('.hobby-sheet');
+            let firstId = "";
+            
+            sheets.forEach(s => {
+                if(s.getAttribute('data-cat') === cat) {
+                    if(!firstId) firstId = s.id;
+                    s.classList.remove('active');
                 } else {
-                    sheet.classList.remove('active');
+                    s.classList.remove('active');
                 }
             });
 
-            buildNavigatorList(category);
-
-            if(firstFoundCard) {
-                activateRecipeById(firstFoundCard.getAttribute('id'));
-            }
+            renderSubLinks(cat);
+            if(firstId) activateHobby(firstId);
         }
 
-        function buildNavigatorList(category) {
-            const container = document.getElementById('recipeSubLinks');
-            container.innerHTML = '';
+        function renderSubLinks(cat) {
+            const container = document.getElementById('subLinkContainer');
+            container.innerHTML = "";
+            const targets = document.querySelectorAll(`.hobby-sheet[data-cat="${cat}"]`);
             
-            const targetedSheets = document.querySelectorAll(`.recipe-sheet[data-cat="${category}"]`);
-            targetedSheets.forEach(sheet => {
-                const id = sheet.getAttribute('id');
-                const title = sheet.querySelector('h1').textContent;
-                
+            targets.forEach(t => {
+                const title = t.querySelector('h1').innerText;
                 const link = document.createElement('a');
-                link.className = 'sub-recipe-item';
-                link.id = 'link-' + id;
-                link.textContent = title;
-                link.onclick = () => activateRecipeById(id);
-                
+                link.className = 'sub-link';
+                link.id = 'link-' + t.id;
+                link.innerText = title;
+                link.onclick = () => activateHobby(t.id);
                 container.appendChild(link);
             });
         }
 
-        function activateRecipeById(id) {
-            document.querySelectorAll('.sub-recipe-item').forEach(item => item.classList.remove('active'));
+        function activateHobby(id) {
+            document.querySelectorAll('.hobby-sheet').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.sub-link').forEach(l => l.classList.remove('active'));
+            
+            const activeSheet = document.getElementById(id);
+            activeSheet.classList.add('active');
+            
             const activeLink = document.getElementById('link-' + id);
             if(activeLink) activeLink.classList.add('active');
 
-            document.querySelectorAll('.recipe-sheet').forEach(sheet => sheet.classList.remove('active'));
+            const imgUrl = activeSheet.getAttribute('data-img');
+            const mainImg = document.getElementById('mainImage');
             
-            const targetSheet = document.getElementById(id);
-            if(targetSheet) {
-                targetSheet.classList.add('active');
-                const imgSrc = targetSheet.getAttribute('data-img');
-                document.getElementById('mainImageDisplay').src = imgSrc;
-            }
+            // Animasi reload gambar
+            mainImg.style.opacity = "0";
+            setTimeout(() => {
+                mainImg.src = imgUrl;
+                mainImg.style.opacity = "1";
+            }, 200);
         }
 
-        function executeSearch() {
-            const query = document.getElementById('recipeSearch').value.toLowerCase().trim();
-            const sheets = document.querySelectorAll('.recipe-sheet');
-            let matched = false;
-            let firstMatchedId = '';
+        function performSearch() {
+            const q = document.getElementById('searchBar').value.toLowerCase().trim();
+            const sheets = document.querySelectorAll('.hobby-sheet');
+            let found = false;
+            let firstFoundId = "";
 
-            const sideContainer = document.getElementById('recipeSubLinks');
-            sideContainer.innerHTML = '';
+            const subContainer = document.getElementById('subLinkContainer');
+            subContainer.innerHTML = "";
 
-            sheets.forEach(sheet => {
-                const keyword = sheet.getAttribute('data-keyword');
-                const id = sheet.getAttribute('id');
-
-                if(keyword.includes(query)) {
-                    matched = true;
-                    if(!firstMatchedId) firstMatchedId = id;
-
-                    const title = sheet.querySelector('h1').textContent;
+            sheets.forEach(s => {
+                const keys = s.getAttribute('data-key');
+                if(keys.includes(q)) {
+                    found = true;
+                    if(!firstFoundId) firstFoundId = s.id;
+                    
                     const link = document.createElement('a');
-                    link.className = 'sub-recipe-item';
-                    link.id = 'link-' + id;
-                    link.textContent = title;
-                    link.onclick = () => activateRecipeById(id);
-                    sideContainer.appendChild(link);
-                } else {
-                    sheet.classList.remove('active');
+                    link.className = 'sub-link';
+                    link.id = 'link-' + s.id;
+                    link.innerText = s.querySelector('h1').innerText;
+                    link.onclick = () => activateHobby(s.id);
+                    subContainer.appendChild(link);
                 }
+                s.classList.remove('active');
             });
 
-            if(matched) {
-                document.getElementById('searchEmpty').style.display = 'none';
-                document.getElementById('mediaSection').style.display = 'block';
-                activateRecipeById(firstMatchedId);
+            if(found) {
+                document.getElementById('noResult').style.display = 'none';
+                activateHobby(firstFoundId);
             } else {
-                document.getElementById('mediaSection').style.display = 'none';
-                document.getElementById('searchEmpty').style.display = 'block';
+                document.getElementById('noResult').style.display = 'block';
+                document.getElementById('mainImage').src = "https://via.placeholder.com/800x600/020617/3B82F6?text=Not+Found";
             }
         }
 
-        document.getElementById('recipeSearch').addEventListener('keyup', (e) => {
-            if(e.key === 'Enter') executeSearch();
+        // Search on Enter
+        document.getElementById('searchBar').addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') performSearch();
         });
     </script>
 </body>
